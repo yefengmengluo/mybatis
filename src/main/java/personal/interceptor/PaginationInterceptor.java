@@ -210,7 +210,7 @@ public class PaginationInterceptor implements Interceptor {
 	 */
 	private String getCountSql(String sql) {
 
-		return "select count(1) from (" + sql + ")";
+		return "select count(1) from (" + sql + ") a";
 	}
 
 	/**
