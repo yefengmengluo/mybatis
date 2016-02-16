@@ -39,7 +39,7 @@ public class PersonController {
 	 * @return
 	 */
 	@RequestMapping(value = "/list")
-	public String getList(HttpServletRequest request, @RequestParam(required=false,defaultValue="1") Integer pageNo) {
+	public String getList(HttpServletRequest request, @RequestParam(name="pageNo",required=false,defaultValue="1") Integer pageNo) {
 		Page<Person> page = new Page<Person>();
 		page.setPageNo(pageNo);
 		Page<Person> list = service.getList(page);
