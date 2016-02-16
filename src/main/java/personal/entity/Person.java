@@ -50,4 +50,12 @@ public class Person {
     public void setAddressId(Integer addressId) {
         this.addressId = addressId;
     }
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + ", gender=" + gender + ", age=" + age + ", addressId="
+				+ addressId + "]";
+	}
+    
+    
 }

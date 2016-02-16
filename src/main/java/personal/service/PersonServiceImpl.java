@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import personal.entity.Person;
-import personal.entity.PersonExample;
 import personal.mapper.PersonMapper;
 import personal.util.Page;
 @Service("voteAdvertisingService")
@@ -17,9 +16,9 @@ public class PersonServiceImpl implements PersonService {
 	
 	@Override
 	public Page<Person> getList(Page<Person> page) {
-		PersonExample qbe = new PersonExample();
-		qbe.createCriteria();
-		List<Person> persons = mapper.selectByExample(qbe);
+//		PersonExample qbe = new PersonExample();
+//		qbe.createCriteria();
+		List<Person> persons = mapper.getPageList(page);
 		page.setResults(persons);
 		return page;
 	} 

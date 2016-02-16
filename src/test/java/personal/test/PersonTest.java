@@ -1,6 +1,8 @@
 package personal.test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,12 +28,16 @@ public class PersonTest {
 
 	@Test
 	public void getList() {
+		String keyWord = "刘";
 		Page<Person> page = new Page<Person>();
-		page.setPageNo(2);
+		page.setPageNo(1);
+		Map<String,Object> params = new HashMap<String,Object>();
+		params.put("keyWord", keyWord);
+		page.setParams(params);
 		Page<Person> list = service.getList(page);
-		List<Person> advertisings = list.getResults();
-		if(!CollectionUtils.isEmpty(advertisings)){
-			for(Person person : advertisings){
+		List<Person> persons = list.getResults();
+		if(!CollectionUtils.isEmpty(persons)){
+			for(Person person :persons){
 				System.out.println(person);
 			}
 		}

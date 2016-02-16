@@ -66,6 +66,7 @@ public class PaginationInterceptor implements Interceptor {
 		BoundSql boundSql = delegate.getBoundSql();
 		// 拿到当前绑定Sql的参数对象，就是我们在调用对应的Mapper映射语句时所传入的参数对象
 		Object obj = boundSql.getParameterObject();
+		System.out.println(obj);
 		// 这里我们简单的通过传入的是Page对象就认定它是需要进行分页操作的。
 		System.out.println("拦截之前的sql:"+boundSql.getSql());
 		if (obj instanceof Page<?>) {

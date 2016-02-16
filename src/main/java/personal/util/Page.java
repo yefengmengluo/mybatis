@@ -68,6 +68,7 @@ public class Page<T> {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Page [pageNo=").append(pageNo).append(", pageSize=").append(pageSize).append(", results=")
 				.append(results).append(", totalPage=").append(totalPage).append(", totalRecord=").append(totalRecord)
+				.append(", params=").append(params.get("keyWord"))
 				.append("]");
 		return builder.toString();
 	}

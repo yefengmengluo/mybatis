@@ -4,6 +4,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import personal.entity.Person;
 import personal.entity.PersonExample;
+import personal.util.Page;
 
 public interface PersonMapper {
     int countByExample(PersonExample example);
@@ -27,4 +28,7 @@ public interface PersonMapper {
     int updateByPrimaryKeySelective(Person record);
 
     int updateByPrimaryKey(Person record);
+    
+    //条件分页查询
+    List<Person> getPageList(Page<Person> page);
 }
