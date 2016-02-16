@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import personal.entity.Person;
 import personal.mapper.PersonMapper;
 import personal.util.Page;
-@Service("voteAdvertisingService")
+@Service("personService")
 public class PersonServiceImpl implements PersonService {
 
 	@Autowired

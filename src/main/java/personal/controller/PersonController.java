@@ -12,7 +12,7 @@ import personal.service.PersonService;
 import personal.util.Page;
 
 @Controller
-@RequestMapping("advertising")
+@RequestMapping("person")
 public class PersonController {
 	
 	@Autowired
@@ -25,7 +25,7 @@ public class PersonController {
 	@RequestMapping(value = "/list")
 	public String getList(HttpServletRequest request){
 		Page<Person> page = new Page<Person>();
-		page.setPageNo(2);
+		page.setPageNo(1);
 		Page<Person> list = service.getList(page);
 		request.setAttribute("list", list);
 		return "list";
