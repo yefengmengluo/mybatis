@@ -9,32 +9,30 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.CollectionUtils;
 
-import personal.entity.VoteAdvertising;
-import personal.service.VoteAdvertisingService;
+import personal.entity.Person;
+import personal.service.PersonService;
 import personal.util.Page;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:config/applicationContext.xml"})
-public class VoteAdvertisingTest {
+public class PersonTest {
 	
 	@Autowired
-	private VoteAdvertisingService service;
+	private PersonService service;
 	
 	@Test
 	public void getById() {
-		VoteAdvertising advertising = service.getById(4200l);
-		System.out.println(advertising);
 	}
 
 	@Test
 	public void getList() {
-		Page<VoteAdvertising> page = new Page<VoteAdvertising>();
+		Page<Person> page = new Page<Person>();
 		page.setPageNo(2);
-		Page<VoteAdvertising> list = service.getList(page);
-		List<VoteAdvertising> advertisings = list.getResults();
+		Page<Person> list = service.getList(page);
+		List<Person> advertisings = list.getResults();
 		if(!CollectionUtils.isEmpty(advertisings)){
-			for(VoteAdvertising advertising : advertisings){
-				System.out.println(advertising);
+			for(Person person : advertisings){
+				System.out.println(person);
 			}
 		}
 	}
